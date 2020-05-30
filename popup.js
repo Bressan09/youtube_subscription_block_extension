@@ -7,7 +7,7 @@
 function update() {
   chrome.storage.sync.get(["counter", "last_day"], function (result) {
     document.getElementById("message").innerHTML =
-      "Counter: " + result.counter + "<br/>Last Day" + result.last_day;
+      "Counter: " + result.counter + "<br/>Last Day: " + result.last_day;
   });
 }
 
@@ -16,6 +16,6 @@ update();
 
 function resetCounter() {
   let current_day = new Date().getDate();
-  chrome.storage.sync.set({ counter: 1, last_day: current_day });
+  chrome.storage.sync.set({ counter: 0, last_day: current_day });
   update();
 }

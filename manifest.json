@@ -8,7 +8,8 @@
   "content_scripts": [
     {
       "js": ["content.js"],
-      "matches": ["http://*/*", "https://*/*"]
+      "matches": ["https://www.youtube.com/feed/subscriptions"],
+      "run_at": "document_start"
     }
   ],
   "permissions": ["storage"],
