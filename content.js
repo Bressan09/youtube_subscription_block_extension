@@ -13,7 +13,7 @@ function validateAccess() {
     let current_day = new Date().getDate();
     if (isEmpty(result) || result.last_day != current_day) {
       chrome.storage.sync.set({ counter: 1, last_day: current_day });
-    } else if (result.last_day == current_day && result.counter > 3) {
+    } else if (result.last_day == current_day && result.counter >= 3) {
       chrome.storage.sync.set(
         {
           counter: result.counter + 1,
